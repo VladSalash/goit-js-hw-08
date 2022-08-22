@@ -1,8 +1,9 @@
 // Add imports above this line
 import { galleryItems } from './gallery-items';
+// Change code below this line
 import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
-// Change code below this line
+
 const galleryContainer = document.querySelector('.gallery');
 const imgMarkup = createGalleryItemMarkup(galleryItems);
 
@@ -15,17 +16,17 @@ galleryContainer.addEventListener('click',onGalleryContainerClick);
 function createGalleryItemMarkup(img) {
     return img.map(({preview,original,description}) => {
         return `<div class="gallery__item">
-                        <a class="gallery__item" 
+                        <a class="gallery__item"
                         href="${original}">
-                        <img class="gallery__image" 
-                        src="${preview}" 
+                        <img class="gallery__image"
+                        src="${preview}"
                         alt="${description}" />
                 </a>
                     </div>`;
     }).join('')
-    
+
 }
-   
+
 function onGalleryContainerClick(evt) {
     evt.preventDefault();
     // const imageEl = evt.target;
@@ -37,7 +38,8 @@ function onGalleryContainerClick(evt) {
     };
     imageModalClick()
 }
-new SimpleLightbox('.gallery a',
+
+     new SimpleLightbox('.gallery a',
         {
             navText: ['<', '>'],
             captionsData: 'alt',
@@ -47,6 +49,10 @@ new SimpleLightbox('.gallery a',
 // captionsData добавляет текст из даты
 // captionPosition положение текста
 // captionDelay задержка
-// navText Текст или html для навигационных стрелок 
+// navText Текст или html для навигационных стрелок
+
+
+
+
 
 console.log(galleryItems);
